@@ -12,6 +12,10 @@ func main() {
 	m.Get("/", func() string {
 		return "Hello world!"
 	})
-	m.Post("/generate", binding.Json(ace.AceOptionsSpec{}), installer.GenerateInstaller)
+	m.Post("/generate", binding.Json(ace.AceOptionsSpec{}), GenerateInstaller)
 	m.Run()
+}
+
+func GenerateInstaller(ctx *macaron.Context, opts ace.AceOptionsSpec) {
+
 }
